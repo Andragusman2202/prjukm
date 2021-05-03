@@ -34,7 +34,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 ">
-                                 <form action="{{url("/ukm/{$ukm->id_ukm}")}}" method="post">
+                                 <form action="{{url("/ukm/{$ukm->id_ukm}")}}" method="post" >
                                     @method('PATCH')
                                     @csrf
                                     <div class="form-group">
@@ -59,7 +59,11 @@
                                     </div>
                                     <div class="form-group"> 
                                         <label for="logo_file">FILE :</label>
-                                        <input value="{{$ukm->logo_file}}"class="form-control" placeholder="Masukkan File" type="file" name="logo_file">
+                                        <input type="file" name="logo_file" />
+                                            <img src="{{ URL::to('/') }}/data_foto/{{ $ukm->logo_file }}" class="img-thumbnail" width="100" />
+                                            <input type="hidden" name="hidden_image" value="{{ $ukm->logo_file }}" />
+      
+                                        {{-- <input value="{{$ukm->logo_file}}"class="form-control" placeholder="Masukkan File" type="file" name="logo_file"> --}}
                                     </div>
                                     <div class="text-right">
                                         <button type="submit" class="btn btn-sm btn-primary">Update</button>

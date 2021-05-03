@@ -66,7 +66,7 @@
                             <a class="btn btn-sm btn-primary" href="{{url("ukm/{$ukms->id_ukm}/edit")}}">EDIT</a>
                         </td>
                         <td>
-                            <form action="{{url("ukm/{$ukms->id_ukm}")}}" method="post">
+                            <form action="{{url("ukm/{$ukms->id_ukm}")}}" method="post" >
                                 @csrf
                                 @method ('DELETE')
                                 <button class="btn btn-sm btn-danger">DELETE</button>

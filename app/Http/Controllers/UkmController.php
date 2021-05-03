@@ -42,7 +42,7 @@ class UkmController extends Controller
         $foto = $request->file('logo_file');
         $tujuan_upload_foto = 'data_foto';
         $upload_photo = 'ukm-'.$request->nama_ukm.'-'.time().'.'.$foto->extension();
-        $uploadFoto = $foto->storeAs($tujuan_upload_foto, $upload_photo);
+        $foto->move($tujuan_upload_foto, $upload_photo);
 
         $ukm = new Ukm([
             'id_ukm' => $request->id_ukm,
@@ -76,6 +76,7 @@ class UkmController extends Controller
      */
     public function edit($id_ukm)
     {
+        
         $ukm = Ukm::find($id_ukm);
         // $ukm = Ukm::where('id_ukm',$id_ukm)->first();
         //jika menggunakan find wajib menset primary key di model
@@ -100,6 +101,7 @@ class UkmController extends Controller
         $ukm->misi = $request->input('misi');
         $ukm->tgl_berdiri = $request->input('tgl_berdiri');
         $ukm->logo_file = $request->input('logo_file');
+
         $ukm->save();
         return \redirect('/ukm');
     }

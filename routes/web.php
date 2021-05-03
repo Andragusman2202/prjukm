@@ -71,3 +71,5 @@ Route::patch('/prestasi/{id_prestasi}','PrestasiController@update' );
 Route::delete('/prestasi/{id_prestasi}','PrestasiController@destroy' );
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('cybertech','CybertechController@view')->name('cybertech');
