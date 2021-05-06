@@ -5,9 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        {{-- <img class="img-fluid" src="{{asset('dashboard/dist/img/pnp.png')}}""  height="50px" w alt="..." /> --}}
         <title>Unit Kegiatan Mahasiswa PNP</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="{{asset('welcome/dist/assets/img/favicon.ico')}}" />
+        <link rel="icon" type="image/x-icon" href="{{asset('dashboard/dist/img/pnp.png')}}"" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -19,6 +20,7 @@
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <img class="img-fluid" src="{{asset('dashboard/dist/img/pnp.png')}}"  height="50px" width="100px" alt="..." />
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="{{asset('welcome/dist/#page-top')}}">Unit Kegiatan Mahasiswa PNP</a>
                 <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,9 +56,7 @@
                 <!-- Portfolio Grid Items-->
                 <div class="row justify-content-center">
                     @foreach ($ukm as $ukm)
-                    <!-- Portfolio Item 1-->
                     <div class="col-md-2 col-lg-3 mb-4" >
-                        {{-- <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1"> --}}
                             <div class="portfolio-item mx-auto">
                             <a href="{{ url('cybertech') }}" target="new" class="portfolio-link">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -147,32 +147,18 @@
         <footer class="footer text-center">
             <div class="container">
                 <div class="row">
-                    <!-- Footer Location-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
-                        <p class="lead mb-0">
-                            2215 John Daniel Drive
-                            <br />
-                            Clark, MO 65243
-                        </p>
-                    </div>
                     <!-- Footer Social Icons-->
-                    <div class="col-lg-4 mb-5 mb-lg-1">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                    <div class=" py-2 text-center text-white">
+                        <h4 class="text-uppercase mb-4 text-center" >UNIT KEGIATAN MAHASISWA POLITEKNIK NEGERI PADANG</h4>
+                        <p class="lead mb-0">
+                            GEDUNG PKM POLITEKNIK NEGERI PADANG
+                            <br>Limau Manis Padang Sumatera Barat</br>
+                        </p>
                         <a class="btn btn-outline-light btn-social mx-1" href="{{asset('welcome/dist/#!')}}"><i class="fab fa-fw fa-facebook-f"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="{{asset('welcome/dist/#!')}}"><i class="fab fa-fw fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="{{asset('welcome/dist/#!')}}"><i class="fab fa-fw fa-linkedin-in"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="{{asset('welcome/dist/#!')}}"><i class="fab fa-fw fa-dribbble"></i></a>
-                    </div>
-                    <!-- Footer About Text-->
-                    <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
-                        <p class="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
-                            <a href="http://startbootstrap.com">Start Bootstrap</a>
-                            .
-                        </p>
-                    </div>
+                    </div>                   
                 </div>
             </div>
         </footer>

@@ -147,8 +147,8 @@ h3 {
 </style>
 <div class="login_form">
     <div class="details">
-      <div class="welcome">Welcome</div>
-      <form action="{{route('login')}}" method="POST">
+      <div class="welcome">Login</div>
+      <form action="{{ route ('login') }}" method="POST">
         @csrf
         <div class="wrap">
           <label>Email</label>

@@ -26,7 +26,7 @@
       background-position: center;
       background-size: 100%;
     }
-    .login_form {
+    .register_form {
       position: relative;
       border-bottom: 3px solid var(--colour-four);
       border-right: 3px solid var(--colour-four);
@@ -46,31 +46,34 @@
       position: absolute;
       color: var(--colour-six);
       left: 40%;
-      top: 10%;
+      top: 5%;
       font-size: 30pt;
     }
-    .wrap:nth-child(1) {
-      position: absolute;
-      top: 35%;
-      left: 50%;
-      margin: 12px;
-    }
+    
     .wrap:nth-child(2) {
       position: absolute;
-      top: 25%;
+      top: 20%;
       left: 30%;
       font-size: 15px;
       margin: 12px;
     }
     .wrap:nth-child(3) {
       position: absolute;
-      top: 45%;
+      top: 35%;
       left: 30%;
       font-size: 15px;
       margin: 12px;
       
     }
     .wrap:nth-child(4) {
+      position: absolute;
+      top: 50%;
+      left: 30%;
+      font-size: 15px;
+      margin: 12px;
+      
+    }
+    .wrap:nth-child(5) {
       position: absolute;
       top: 65%;
       left: 30%;
@@ -103,7 +106,7 @@
       border-radius: 10px;
       border: none;
     }
-    .button .sign {
+    .button .register {
       color: #fff;
       font-size: 15px;
       
@@ -156,25 +159,45 @@
       padding: 5px;
     }
     </style>
-    <div class="login_form">
-        
-          <div class="welcome">Welcome</div>
-          <form action="{{route('register')}}" method="POST">
+    <div class="register_form">
+          <div class="welcome">Register</div>
+          <form action="{{ route('register') }}" method="POST">
             @csrf
             <div class="wrap">
-              <label>Email</label>
-              <input type="text" class="input" name="email" placeholder="Email" id="email">
-              </div>
+              <label for="name">Nama</label>
+              <input id="name" type="text"placeholder="Masukkan Nama" class="input" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+              {{-- @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                 @enderror --}}
+            </div>
+
             <div class="wrap">
-              <label>Password</label>
-              <input type="password" class="input" data-type="password" placeholder="Password" id="password" name="password">
-              </div>
+              <label for="email">Email</label>
+              <input id="email" type="email" class="input" placeholder="Masukkan Email" name="email" value="{{ old('email') }}" required autocomplete="email">
+              {{-- @error('email')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+             @enderror --}}
+            </div>
+
             <div class="wrap">
-              <label>Konfirmasi Password</label>
-              <input type="password" class="input" data-type=" password" placeholder="Konfirmasi Password" id="konfirmasi password" name="konfirmasi password">
-              </div>
-            <button type="submit" class="button"><h1 class="sign">Register</h1></button>
+              <label for="password">Password</label>
+              <input id="password" type="password" placeholder="Masukkan Password" class="input @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+              {{-- @error('password')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+              @enderror --}}
+            </div>
+
+            <div class="wrap">
+              <label for="password-confirm">Konfirmasi Password</label>
+              <input id="password-confirm" placeholder="Masukkan Konfirmasi Password " type="password" class="input" name="password_confirmation" required autocomplete="new-password">
+            </div>
+            
+            <button type="submit" class="button"><h1 class="register">Register</h1></button>
           </form>
-                
-        
       </div>
